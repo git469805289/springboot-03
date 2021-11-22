@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <script type="text/javascript">
         $(function () {
-            $('#delete').unbind('click').click(function () {
+            $('a.deleteClass').click(function () {
 
                 return confirm("你确定要删除【" + $(this).parent().parent().find("td").eq(1).text() + "】吗");
 
@@ -102,7 +102,7 @@
                         <td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd')}"></td>
                         <td>
                             <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.getId()}">编辑</a>
-                            <a id="delete" class="btn btn-sm btn-danger" th:href="@{/delete/}+${emp.getId()}">删除</a>
+                            <a class="btn btn-sm btn-danger deleteClass" th:href="@{/delete/}+${emp.getId()}">删除</a>
 
                         </td>
 
